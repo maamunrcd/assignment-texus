@@ -1,0 +1,225 @@
+// Utility Classes
+.shadow-bg {
+  z-index: -1;
+  -webkit-filter: blur(300px);
+  filter: blur(300px);
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.gap20 {
+  gap: 20px;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.d-flex {
+  @include display(flex);
+}
+
+.d-inline-flex {
+  @include display(inline-flex);
+}
+
+.d-inline-block {
+  @include display(inline-block);
+}
+
+.d-block {
+  @include display(block);
+}
+
+.align-items-center {
+  @include align-items(center);
+}
+
+.justify-content-center {
+  @include justify-content(center);
+}
+
+.justify-content-between {
+  @include justify-content(space-between);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.d-grid {
+  @include display(grid);
+}
+
+.d-none {
+  @include display(none);
+}
+
+// Positions
+.relative {
+  @include position(relative);
+}
+
+.absolute {
+  @include position(absolute);
+}
+
+// Miscellaneous
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.box-shadow {
+  box-shadow: inset 0px 0px 11px rgba(57, 75, 108, 0.8);
+}
+
+.border-bottom {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.input-border {
+  border: 1px solid $border-color;
+}
+
+.paragraph {
+  color: $primary-title-color;
+  line-height: 1.6;
+}
+
+.required {
+  color: $danger;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the overlay image appears above the base image */
+}
+
+.background-shaped {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: 0.4s;
+  }
+}
+
+// Text Styles
+.text-decoration-none,
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-black {
+  color: #000905;
+}
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-white {
+  color: lighten($primary-title-color, 100%);
+}
+
+.text-primary {
+  color: $primary-color;
+}
+.text-link {
+  color: $link-color;
+}
+
+// Background Styles
+.bg-black {
+  background: darken($primary-title-color, 100%);
+}
+
+.bg-white {
+  background: lighten($primary-title-color, 100%);
+}
+
+.primary-color {
+  background: $primary-color;
+}
+
+// Components
+.card {
+  border: 1px solid rgba(54, 59, 76, 0.8);
+  background: rgba(22, 26, 41, 0.7);
+  border-radius: 23px;
+}
+
+.btn {
+  padding: 18px 65px;
+  border: 0;
+}
+
+.btn-primary {
+  background: $primary-color;
+}
+
+.link {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.responsive-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.section-heading {
+  line-height: 1.3;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  span {
+    padding: 0 20px;
+  }
+}
+
+.section-heading-icon {
+  margin-bottom: 30px;
+  p {
+    background: transparent;
+    border: none;
+    padding: 13px 23px;
+    border-radius: 25px;
+    margin: 0;
+
+    img {
+      margin-right: 15px;
+    }
+    span {
+      margin-top: -3px;
+      &::after {
+        content: "";
+        width: 41px;
+        height: 41px;
+        border-radius: 100%;
+        position: absolute;
+        right: 15%;
+        top: -50%;
+        box-shadow: inset 0px 0px 11px rgba(57, 75, 108, 0.8);
+      }
+    }
+  }
+}

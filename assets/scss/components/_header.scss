@@ -1,0 +1,65 @@
+header {
+  &.menu-fixed {
+    position: fixed;
+    width: 100%;
+    top: -44px;
+    z-index: 10000;
+    .logo {
+      svg {
+        width: 50%;
+        margin-top: 31px;
+      }
+    }
+  }
+  .logo {
+    line-height: 16px;
+    font-weight: 500;
+  }
+  .container-fluid {
+    padding-left: 70px;
+    padding-right: 0;
+  }
+  .navbar-toggler {
+    border: 0;
+    background: transparent;
+  }
+  .header-elements {
+    border-left: 1px solid $primary-border-color;
+    border-bottom: 1px solid $primary-border-color;
+  }
+  .company-title {
+    font-size: 12px;
+    padding: 0 30px;
+  }
+  .work-time {
+    .icon {
+      margin-top: -2px;
+    }
+  }
+  .language {
+    margin-top: -6px;
+    .link {
+      padding: 4px 0;
+    }
+  }
+  .menu,
+  .secondary-nav {
+    li {
+      margin-left: -5px;
+      .btn {
+        padding: 24px 32px;
+      }
+      .btn.btn-primary {
+        padding: 24px 42px;
+      }
+    }
+    border-left: 1px solid $primary-border-color;
+  }
+  .header-links-container {
+    li {
+      .link {
+        padding: 7px 13px;
+      }
+    }
+  }
+}

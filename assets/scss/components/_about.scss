@@ -1,0 +1,28 @@
+.about-us-section {
+  padding-bottom: 0;
+  margin-top: 118px;
+  .about-us-wrapper {
+    background: url("./../../../assets/images/pattern.svg") no-repeat left
+      $primary-color;
+    padding: 50px 0 80px 0;
+    background-position: 32.5% 0;
+    min-height: 470px;
+  }
+  .about-us-gallery {
+    bottom: 23px;
+  }
+  .about-content {
+    padding-right: 80px;
+    margin-top: 60px;
+    .quott {
+      right: 80px;
+      top: -30px;
+    }
+    .title {
+      margin-bottom: 25px;
+    }
+    .about-desc {
+      line-height: 34px;
+    }
+  }
+}

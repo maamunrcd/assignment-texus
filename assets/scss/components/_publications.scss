@@ -1,0 +1,54 @@
+.publications-section {
+  padding: 20px 0 35px;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    height: 100%;
+    width: calc(50% - 120px);
+    background: $secondary-color;
+  }
+  .publication-descr {
+    padding-top: 25px;
+  }
+  .publication-title {
+    line-height: 28px;
+  }
+  .publication-author {
+    color: $link-color;
+    line-height: auto;
+  }
+}
+.action {
+  z-index: 1;
+}
+.custom-button-prev,
+.custom-button-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure buttons are on top of the Swiper */
+  &.swiper-button-disabled {
+    svg path {
+      stroke: $primary-border-color;
+    }
+  }
+}
+
+.custom-button-prev {
+  left: -70px; /* Position the "prev" button on the left */
+}
+
+.custom-button-next {
+  right: -70px; /* Position the "next" button on the right */
+}
+
+.custom-button-prev img,
+.custom-button-next img {
+  width: 30px; /* Adjust the icon size */
+  height: auto;
+}

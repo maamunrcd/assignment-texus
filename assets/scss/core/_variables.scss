@@ -1,0 +1,68 @@
+$primary-title-color: #bbd6f6;
+$secondary-color: #f7f7f7;
+$primary-color: #05633b;
+$primary-border-color: #e5e6e6;
+$btn-primary: #ffd500;
+$danger: #ff543e;
+$border-color: #dddddd;
+$input-placeholder: #b6b6b6;
+$link-color: #4c5250;
+$primary-btn-color: #6cffe6;
+$text-gradient-color: linear-gradient(
+  90deg,
+  #ffb80c 0%,
+  #fbbbc3 52%,
+  #4691f9 100%
+);
+$base-font-size: 16px;
+$gutter-x: 1.7rem;
+$gutter-y: 1.7rem;
+
+$breakpoints: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1326px,
+);
+$font-sizes: (
+  12: 12px,
+  14: 14px,
+  15: 15px,
+  16: 16px,
+  18: 18px,
+  19: 19px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  30: 30px,
+  34: 34px,
+  38: 38px,
+  40: 40px,
+  44: 44px,
+  52: 52px,
+  54: 54px,
+  84: 84px,
+  64: 64px,
+);
+$padding-sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.25rem,
+  5: 1.5rem,
+  6: 1.75rem,
+  7: 2rem,
+  8: 3rem,
+  10px: 0.625rem,
+);
+$radius-sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.5rem,
+  6: 3rem,
+);

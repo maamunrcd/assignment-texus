@@ -1,0 +1,214 @@
+@mixin align-items($align: center) {
+  align-items: $align;
+}
+
+@mixin justify-content($content: center) {
+  justify-content: $content;
+}
+
+@mixin position($position: relative) {
+  position: $position;
+}
+
+@mixin display($display: block) {
+  display: $display;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(#{$gutter-x} * - 0.5);
+  margin-left: calc(#{$gutter-x} * - 0.5);
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(#{$gutter-x} * 0.5);
+  padding-left: calc(#{$gutter-x} * 0.5);
+}
+
+@mixin generate-columns-and-offsets($total, $breakpoints) {
+  // Generate default columns and offsets without breakpoint prefix
+  @for $i from 1 through $total {
+    .col-#{$i} {
+      flex: 0 0 auto;
+      width: percentage($i / $total);
+    }
+    .offset-#{$i} {
+      margin-left: percentage($i / $total);
+    }
+  }
+
+  // Generate columns and offsets for each breakpoint
+  @each $breakpoint, $value in $breakpoints {
+    @media (min-width: #{$value}) {
+      @for $i from 1 through $total {
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 auto;
+          width: percentage($i / $total);
+        }
+        .offset-#{$breakpoint}-#{$i} {
+          margin-left: percentage($i / $total);
+        }
+      }
+    }
+  }
+}
+
+// Generate columns and offsets for 12-column grid system
+@include generate-columns-and-offsets(12, $breakpoints);
+
+// Mixin for container styles
+@mixin container-style {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, #{$gutter-x});
+  padding-left: var(--bs-gutter-x, #{$gutter-x});
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin generate-text-align-utilities {
+  .text-left {
+    text-align: left !important;
+  }
+
+  .text-right {
+    text-align: right !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .text-justify {
+    text-align: justify !important;
+  }
+
+  .text-initial {
+    text-align: initial !important;
+  }
+
+  .text-inherit {
+    text-align: inherit !important;
+  }
+}
+
+@each $key, $value in $font-sizes {
+  $rem-value: $value / $base-font-size;
+  $rem-value-rounded: round($rem-value * 100) / 100;
+  .font-size-#{$key} {
+    font-size: #{$rem-value-rounded}rem;
+  }
+}
+
+// Mixin to generate padding classes
+@mixin generate-spacing-classes($spacing-sizes) {
+  @each $key, $value in $spacing-sizes {
+    // Padding classes
+    .p-#{$key} {
+      padding: $value !important;
+    }
+    .pt-#{$key} {
+      padding-top: $value !important;
+    }
+    .pr-#{$key} {
+      padding-right: $value !important;
+    }
+    .pb-#{$key} {
+      padding-bottom: $value !important;
+    }
+    .pl-#{$key} {
+      padding-left: $value !important;
+    }
+    .px-#{$key} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+    .py-#{$key} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+
+    // Margin classes
+    .m-#{$key} {
+      margin: $value !important;
+    }
+    .mt-#{$key} {
+      margin-top: $value !important;
+    }
+    .mr-#{$key} {
+      margin-right: $value !important;
+    }
+    .mb-#{$key} {
+      margin-bottom: $value !important;
+    }
+    .ml-#{$key} {
+      margin-left: $value !important;
+    }
+    .mx-#{$key} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+    .my-#{$key} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+  }
+}
+@mixin generate-border-radius-classes($radius-sizes) {
+  @each $key, $value in $radius-sizes {
+    .rounded-#{$key} {
+      border-radius: $value !important;
+    }
+    .rounded-top-#{$key} {
+      border-top-left-radius: $value !important;
+      border-top-right-radius: $value !important;
+    }
+    .rounded-right-#{$key} {
+      border-top-right-radius: $value !important;
+      border-bottom-right-radius: $value !important;
+    }
+    .rounded-bottom-#{$key} {
+      border-bottom-left-radius: $value !important;
+      border-bottom-right-radius: $value !important;
+    }
+    .rounded-left-#{$key} {
+      border-top-left-radius: $value !important;
+      border-bottom-left-radius: $value !important;
+    }
+    .rounded-circle-#{$key} {
+      border-radius: 50% !important;
+    }
+    .rounded-pill-#{$key} {
+      border-radius: 50rem !important;
+    }
+  }
+}
+
+@mixin font-weight($name, $weight) {
+  .font-weight-#{$name} {
+    font-weight: $weight;
+  }
+}
+// Apply the container styles to the container classes
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  @include container-style;
+}
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: #{$width}) {
+    .container-#{$breakpoint},
+    .container-sm,
+    .container {
+      @if map-has-key($breakpoints, $breakpoint) {
+        max-width: map-get($breakpoints, $breakpoint);
+      }
+    }
+  }
+}

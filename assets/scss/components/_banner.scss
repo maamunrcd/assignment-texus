@@ -1,0 +1,29 @@
+.index-swiper-container {
+  .custom-button-prev {
+    left: 20px;
+  }
+  .custom-button-next {
+    right: 20px;
+  }
+  .custom-button-prev,
+  .custom-button-next {
+    svg path {
+      stroke: lighten($primary-border-color, 100%);
+    }
+  }
+  .swiper-slide-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    .content-wrapper {
+      .btn {
+        padding: 18px 65px;
+      }
+    }
+    .slider-title {
+      line-height: 72px;
+    }
+  }
+}

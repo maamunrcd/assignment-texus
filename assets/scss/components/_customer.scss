@@ -1,0 +1,30 @@
+.testimonials {
+  .shadow-bg {
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    left: 10%;
+    margin: 0 auto;
+  }
+}
+.customer-reviews {
+  padding: 0 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  .review-item {
+    &.show {
+      display: block !important;
+      width: 100%;
+    }
+    &:nth-child(3) {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+  }
+  .avator-img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+  }
+}
