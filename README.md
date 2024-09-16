@@ -3,11 +3,11 @@
 clone the repo using
 
 ```bash
-git clone https://github.com/maamunrcd/test-dline.git
+git clone https://github.com/maamunrcd/assignment-texus
 ```
 ## Go to folder using
 ```bash
-cd test-dline
+cd assignment-texus
 ```
 ## Folder stracture
 ```
